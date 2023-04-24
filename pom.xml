@@ -21,7 +21,7 @@
 		<spring.version>5.1.2.RELEASE</spring.version>
 		<junit.version>4.11</junit.version>
 		<log4j.version>1.2.17</log4j.version>
-		<sonar.host.url>http://13.58.91.137:9000/</sonar.host.url>
+		<sonar.host.url>http://172.31.29.136:9000/</sonar.host.url>
                 <sonar.login>squ_73bba6283d950696e6cb37c80ddd7b617c3036bc</sonar.login>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -97,13 +97,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>City Bank Releases Nexus Repository</name>
-	      <url>http://18.117.221.213:8081/repository/citybankrelease/</url>
+	      <url>http://172.31.30.222:8081/repository/citybankrelease/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>City Bank Snapshot Nexus Repository </name>
-	      <url>http://18.117.221.213:8081/repository/citybanksnap/</url>
+	      <url>http://172.31.30.222:8081/repository/citybanksnap/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
