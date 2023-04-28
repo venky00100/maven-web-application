@@ -1,0 +1,24 @@
+node{
+def mavenHome= tool name: 'maven3.9.1'
+stage('checkoutCode'){
+git branch: 'development', credentialsId: '17da586a-93a0-4057-ae12-c1e9f83b932f', url: 'https://github.com/venky00100/maven-web-application.git'
+}
+stage('Build'){
+sh "${mavenHome}/bin/mvn clean package"
+}
+stage('ExecuteSonarQueReport'){
+sh "${mavenHome}/bin/mvn clean sonar:sonar"
+}
+stage('UPloadArtifactsIntoNexus'){
+sh "${mavenHome}/bin/mvn deploy"
+
+}
+
+stage ('DeployAppintoTomcat'){
+sshagent(['ec2-user']) {
+sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@172.31.24.200:/opt/apache-tomcat-9.0.74/webapps"
+
+}
+}
+
+}
